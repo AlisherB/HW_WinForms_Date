@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Task
 {
-    public partial class Form1 : Form
+    public partial class FormDayOfWeek : Form
     {
-        public Form1()
+        public FormDayOfWeek()
         {
             InitializeComponent();
         }
 
-        private void buttonEnter_Click(object sender, EventArgs e)
+        private void ButtonEnter_Click(object sender, EventArgs e)
         {
             DateTime dateTime = new DateTime();
             try
@@ -27,12 +20,13 @@ namespace Task
             }
             catch (Exception)
             {
-                MessageBox.Show("Дата введена неверно (дд.мм.гггг)", "Error");
+                MessageBox.Show("Дата введена неверно (дд.мм.гггг)", "Invalid date entered");
                 textBoxEnter.Clear();
+                textBoxRes.Clear();
             }
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             textBoxRes.Clear();
         }
